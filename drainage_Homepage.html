@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drainage Services | Repairs, Blocked Drains & More | ClearFlow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #162d52;
+    --gold: #c9922a;
+    --gold-light: #e8b45a;
+    --cream: #f7f3ee;
+    --white: #ffffff;
+    --blue: #1b4f8a;
+    --blue-light: #e8f0f9;
+    --green: #1a7a4a;
+    --green-light: #e6f4ec;
+    --text: #2c3e50;
+    --muted: #6b7280;
+    --border: #e2ddd7;
+    --dark-bg: #0a1628;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, var(--blue) 60%, #1b5f9a 100%);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(ellipse at 80% 20%, rgba(201,146,42,0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Pipe pattern */
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-text { }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,146,42,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+    color: var(--white);
+    line-height: 1.18;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span { color: var(--gold-light); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+
+  .hero-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    box-shadow: 0 4px 18px rgba(201,146,42,0.4);
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  .hero-trust-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 2rem 1.6rem;
+    min-width: 200px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .trust-item { margin-bottom: 1.5rem; }
+  .trust-item:last-child { margin-bottom: 0; }
+
+  .trust-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+
+  .trust-label {
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .trust-sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.78rem;
+  }
+
+  /* SECTION GENERAL */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 3rem;
+  }
+
+  /* PRICING PROMISES */
+  .promises { background: var(--navy); }
+
+  .promises .section-title { color: var(--white); }
+  .promises .section-label { color: var(--gold-light); }
+
+  .promises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .promise-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1.8rem;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .promise-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.1);
+  }
+
+  .promise-icon { font-size: 2.4rem; margin-bottom: 0.8rem; }
+
+  .promise-card h3 {
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .promise-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+
+  /* SERVICES */
+  .services { background: var(--cream); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--blue);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,31,60,0.12);
+  }
+
+  .service-card:nth-child(2)::before { background: var(--gold); }
+  .service-card:nth-child(3)::before { background: var(--green); }
+  .service-card:nth-child(4)::before { background: #8e44ad; }
+  .service-card:nth-child(5)::before { background: #e67e22; }
+  .service-card:nth-child(6)::before { background: #16a085; }
+
+  .service-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .tag {
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* PROCESS */
+  .process { background: var(--white); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    position: relative;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    position: relative;
+  }
+
+  .step-number {
+    width: 52px;
+    height: 52px;
+    background: var(--navy);
+    color: var(--gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 0 auto 1rem;
+    font-weight: 700;
+  }
+
+  .process-step h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+  }
+
+  .process-step p { font-size: 0.87rem; color: var(--muted); }
+
+  /* EMERGENCY BAND */
+  .emergency-band {
+    background: linear-gradient(135deg, #c0392b, #922b21);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: white;
+  }
+
+  .emergency-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .emergency-band p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .emergency-phone {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .emergency-phone:hover { color: #ffd6d6; }
+
+  .btn-white {
+    background: white;
+    color: #c0392b;
+    padding: 0.9rem 2.2rem;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+
+  .btn-white:hover { background: #ffd6d6; transform: translateY(-2px); }
+
+  /* WHY US */
+  .why-us { background: var(--blue-light); }
+
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .why-list { list-style: none; }
+
+  .why-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(27,79,138,0.12);
+    font-size: 0.95rem;
+  }
+
+  .why-list li:last-child { border-bottom: none; }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .why-accent-box {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2.5rem;
+    color: white;
+  }
+
+  .why-accent-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .accent-stat {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .accent-stat:last-child { border-bottom: none; }
+
+  .accent-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    min-width: 70px;
+  }
+
+  .accent-stat-text { color: rgba(255,255,255,0.65); font-size: 0.88rem; }
+
+  /* COVERAGE */
+  .coverage { background: var(--cream); text-align: center; }
+
+  .coverage-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .area-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--navy);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .area-tag:hover {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+  }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: var(--navy);
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+
+  .cta-final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .cta-final p {
+    color: rgba(255,255,255,0.65);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.05rem;
+  }
+
+  .phone-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    text-decoration: none;
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  .phone-big:hover { color: white; }
+
+  /* FOOTER */
+  footer {
+    background: #060d1a;
+    color: rgba(255,255,255,0.4);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 1rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-trust-box { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    .why-layout { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-text > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-text > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-text > *:nth-child(4) { animation-delay: 0.55s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Clear<span>Flow</span> Drainage</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">How We Work</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html">Selling Your Home?</a>
+    <a href="#contact" class="nav-cta">Call Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-badge">Local Drainage Specialists</span>
+      <h1>Drainage Problems <span>Solved Fast</span> — No Fuss, No Hidden Costs</h1>
+      <p class="hero-sub">From blocked drains and emergency call-outs to full pipe repairs and CCTV surveys — we're your local drainage team. Competitive rates, no call-out fees, and no hidden charges. Ever.</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">Call Us Now</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-trust-box">
+      <div class="trust-item">
+        <div class="trust-icon">🚫</div>
+        <div class="trust-label">No Call-Out Fee</div>
+        <div class="trust-sub">Ever</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💷</div>
+        <div class="trust-label">Competitive Rates</div>
+        <div class="trust-sub">Hourly pricing</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔍</div>
+        <div class="trust-label">No Hidden Charges</div>
+        <div class="trust-sub">Transparent quotes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PROMISES -->
+<section class="promises">
+  <div class="section-inner">
+    <p class="section-label">Our Promise to You</p>
+    <h2 class="section-title" style="color:var(--white);">Honest, Transparent Pricing — Every Time</h2>
+    <div class="promises-grid">
+
+      <div class="promise-card">
+        <div class="promise-icon">🚫</div>
+        <h3>No Call-Out Charge</h3>
+        <p>We never charge just to turn up. You only pay for the time and materials actually needed for your job.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="promise-icon">⏱️</div>
+        <h3>Competitive Hourly Rates</h3>
+        <p>Fair, competitive hourly pricing with no inflated labour costs. You'll know the rate before we start.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="promise-icon">🔒</div>
+        <h3>No Hidden Charges</h3>
+        <p>The price you're quoted is the price you pay. No unexpected extras added once the job is underway.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="promise-icon">📋</div>
+        <h3>Free Written Quotes</h3>
+        <p>We'll always give you a written quote before any work begins so you can make an informed decision.</p>
+      </div>
+
+      <div class="promise-card">
+        <div class="promise-icon">✅</div>
+        <h3>Work Guaranteed</h3>
+        <p>All our drainage work is backed by a workmanship guarantee. If something isn't right, we'll put it right.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Drainage Services for Homes & Businesses</h2>
+    <p class="section-intro">Whatever your drainage problem — large or small — our team has the tools and experience to solve it properly.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🚿</div>
+        <h3>Blocked Drains</h3>
+        <p>The most common call we receive. Whether it's a slow-draining sink, a completely blocked toilet, or an overflowing manhole — we'll clear it fast using the right method for the job.</p>
+        <div class="service-tags">
+          <span class="tag">High-Pressure Jetting</span>
+          <span class="tag">Rodding</span>
+          <span class="tag">Same Day</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Drain Repairs</h3>
+        <p>Cracked, collapsed or root-damaged pipes need proper repair to prevent recurrence and structural damage to your property. We offer both traditional dig repairs and modern no-dig solutions.</p>
+        <div class="service-tags">
+          <span class="tag">Patch Repairs</span>
+          <span class="tag">Pipe Lining</span>
+          <span class="tag">Excavation</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎥</div>
+        <h3>CCTV Drain Surveys</h3>
+        <p>Our HD camera equipment reveals exactly what's going on inside your pipes. Ideal for diagnosing recurring blockages, pre-purchase checks, or pre-sale inspections (we offer dedicated seller surveys from £297 + VAT).</p>
+        <div class="service-tags">
+          <span class="tag">HD Footage</span>
+          <span class="tag">Written Report</span>
+          <span class="tag">Pre-Sale Surveys</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💦</div>
+        <h3>High-Pressure Water Jetting</h3>
+        <p>Powerful and effective, water jetting cuts through grease, scale, roots and debris that rods simply can't shift. Safe for modern and older pipe systems when operated by our trained technicians.</p>
+        <div class="service-tags">
+          <span class="tag">Grease Removal</span>
+          <span class="tag">Root Cutting</span>
+          <span class="tag">Industrial Scale</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Drain Lining (No-Dig)</h3>
+        <p>Where excavation would be disruptive or expensive, our no-dig drain lining (CIPP) rehabilitates your existing pipes from the inside — preserving driveways, gardens and structures.</p>
+        <div class="service-tags">
+          <span class="tag">CIPP Lining</span>
+          <span class="tag">No Excavation</span>
+          <span class="tag">Long-Lasting</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Drain Cleaning & Maintenance</h3>
+        <p>Preventative maintenance plans for landlords, businesses and homeowners. Regular cleaning keeps drains clear, prevents emergency call-outs, and extends the life of your drainage system.</p>
+        <div class="service-tags">
+          <span class="tag">Planned Maintenance</span>
+          <span class="tag">Landlord Contracts</span>
+          <span class="tag">Commercial</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="process" id="process">
+  <div class="section-inner">
+    <p class="section-label">Simple Process</p>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-intro">Getting your drainage sorted is straightforward. Here's what to expect from the moment you call.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4>Call or Contact Us</h4>
+        <p>Get in touch by phone or online. We'll ask a few quick questions to understand your problem and give you an honest time estimate.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4>We Arrive & Assess</h4>
+        <p>A fully equipped engineer arrives at your property. We diagnose the problem properly before we start — no guessing, no unnecessary work.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4>We Quote Before We Start</h4>
+        <p>You'll receive a clear, written quote. No work begins until you've agreed. No surprises, no pressure.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h4>Problem Solved</h4>
+        <p>We carry out the work efficiently, leave your property clean and tidy, and issue your invoice only once the job is complete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<div class="emergency-band">
+  <h2>🚨 Drainage Emergency?</h2>
+  <p>Sewage backing up? Drain completely blocked? We respond fast — no emergency call-out surcharge for local areas.</p>
+  <a href="tel:01202000000" class="emergency-phone">📞 01202 000 000</a>
+  <br>
+  <a href="#contact" class="btn-white">Request Emergency Call-Out</a>
+</div>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="section-inner">
+    <div class="why-layout">
+      <div>
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title">Drainage Done Right — From Start to Finish</h2>
+        <ul class="why-list">
+          <li>
+            <span class="check">✓</span>
+            <div><strong>No call-out fees</strong> — we charge only for the time and materials needed, nothing more.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Competitive hourly rates</strong> — you'll always know what you're paying before work begins.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>No hidden charges</strong> — our quotes are comprehensive. What you're quoted is what you pay.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Fully qualified engineers</strong> — trained, insured, and experienced on both domestic and commercial drainage.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Modern equipment</strong> — HD CCTV cameras, high-pressure jetting rigs, and specialist drain lining technology.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Local knowledge</strong> — we understand the drainage systems in this area and respond fast.</div>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <div><strong>Clean & respectful</strong> — we protect your property, clean up after every job, and treat your home with care.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-accent-box">
+        <h3>By the Numbers</h3>
+        <div class="accent-stat">
+          <div class="accent-stat-num">£0</div>
+          <div class="accent-stat-text">Call-out fee — always. We never charge just to attend.</div>
+        </div>
+        <div class="accent-stat">
+          <div class="accent-stat-num">24/7</div>
+          <div class="accent-stat-text">Emergency availability for urgent drainage problems.</div>
+        </div>
+        <div class="accent-stat">
+          <div class="accent-stat-num">HD</div>
+          <div class="accent-stat-text">CCTV camera technology for precise diagnosis every time.</div>
+        </div>
+        <div class="accent-stat">
+          <div class="accent-stat-num">100%</div>
+          <div class="accent-stat-text">Transparent pricing — no surprises, ever.</div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="index.html" style="display:block; background:var(--gold); color:var(--navy); padding:1rem; text-align:center; border-radius:6px; font-weight:700; text-decoration:none; font-size:0.9rem;">Selling Your Home? See Our Pre-Sale Survey →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="coverage">
+  <div class="section-inner">
+    <p class="section-label">Our Service Area</p>
+    <h2 class="section-title">Areas We Cover</h2>
+    <p class="section-intro" style="margin:0 auto 2rem; text-align:center;">We serve the Bournemouth, Poole and Dorset area. Not sure if we cover your location? Just give us a call.</p>
+    <div class="coverage-tags">
+      <span class="area-tag">Bournemouth</span>
+      <span class="area-tag">Poole</span>
+      <span class="area-tag">Christchurch</span>
+      <span class="area-tag">Ferndown</span>
+      <span class="area-tag">Wimborne</span>
+      <span class="area-tag">Wareham</span>
+      <span class="area-tag">Swanage</span>
+      <span class="area-tag">Blandford Forum</span>
+      <span class="area-tag">Dorchester</span>
+      <span class="area-tag">Weymouth</span>
+      <span class="area-tag">Ringwood</span>
+      <span class="area-tag">Verwood</span>
+      <span class="area-tag">Lymington</span>
+      <span class="area-tag">New Milton</span>
+      <span class="area-tag">Surrounding Villages</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contact">
+  <p class="section-label" style="color:var(--gold-light);">Get in Touch</p>
+  <h2>Ready to Solve Your Drainage Problem?</h2>
+  <p>No call-out fees. Competitive rates. No hidden charges. Just great drainage work done properly.</p>
+  <a href="#contact" class="btn-primary" style="font-size:1.05rem; padding:1.1rem 2.5rem;">Request a Free Quote</a>
+  <a href="tel:01202000000" class="phone-big">📞 01202 000 000</a>
+  <p style="color:rgba(255,255,255,0.35); margin-top:1rem; font-size:0.85rem;">Available Monday–Saturday. Emergency lines open 7 days.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 ClearFlow Drainage. All rights reserved. | <a href="index.html">Selling Your Home? Pre-Sale Survey</a> | Serving Bournemouth, Poole, Christchurch & Dorset.</p>
+  <p style="margin-top:0.5rem;">Fully insured. Competitive rates. No hidden charges. No call-out fees.</p>
+</footer>
+
+</body>
+</html>

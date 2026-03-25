@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drainage Survey for Home Sellers | Peace of Mind Before You Sell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #162d52;
+    --gold: #c9922a;
+    --gold-light: #e8b45a;
+    --cream: #f7f3ee;
+    --white: #ffffff;
+    --red: #c0392b;
+    --red-light: #f8e8e6;
+    --green: #1a7a4a;
+    --green-light: #e6f4ec;
+    --text: #2c3e50;
+    --muted: #6b7280;
+    --border: #e2ddd7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.4rem;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 2rem 4rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,146,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,146,42,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    color: var(--white);
+    line-height: 1.18;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 1rem 2.2rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(201,146,42,0.4);
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(201,146,42,0.5);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ALERT BANNER */
+  .alert-banner {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .alert-banner strong { font-weight: 700; }
+
+  /* SECTION GENERAL */
+  section { padding: 5rem 2rem; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 3rem;
+  }
+
+  /* PITFALLS */
+  .pitfalls { background: var(--white); }
+
+  .pitfalls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .pitfall-card {
+    background: var(--red-light);
+    border: 1px solid #f5c6c1;
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 1.6rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pitfall-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(192,57,43,0.12);
+  }
+
+  .pitfall-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .pitfall-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+
+  .pitfall-card p {
+    font-size: 0.9rem;
+    color: #5a2b26;
+    line-height: 1.6;
+  }
+
+  /* STRESS SECTION */
+  .stress-section { background: var(--navy); }
+
+  .stress-section .section-title { color: var(--white); }
+  .stress-section .section-label { color: var(--gold-light); }
+  .stress-section .section-intro { color: rgba(255,255,255,0.65); }
+
+  .stress-timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 2.5rem;
+    max-width: 700px;
+  }
+
+  .stress-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), var(--red), var(--red));
+    border-radius: 3px;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 1.4rem 1.5rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 1.6rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--navy);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .timeline-item.danger::before { background: var(--red); box-shadow: 0 0 0 2px var(--red); }
+
+  .timeline-item h4 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .timeline-item p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+  /* SOLUTION / PRICING */
+  .solution-section { background: var(--cream); }
+
+  .solution-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .solution-list { list-style: none; }
+
+  .solution-list li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+
+  .solution-list li:last-child { border-bottom: none; }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .pricing-card {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(13,31,60,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+  }
+
+  .pricing-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .price-vat {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .pricing-features { list-style: none; text-align: left; margin-bottom: 2rem; }
+
+  .pricing-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .pricing-features li::before { content: '✓'; color: var(--gold-light); font-weight: 700; }
+
+  .btn-cta-large {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 1.1rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(201,146,42,0.4);
+  }
+
+  .btn-cta-large:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* COST SECTION */
+  .cost-section { background: #0d0d0d; }
+  .cost-section .section-title { color: var(--white); }
+  .cost-section .section-label { color: var(--gold-light); }
+  .cost-section .section-intro { color: rgba(255,255,255,0.55); }
+
+  .cost-table {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 2.5rem;
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    gap: 2rem;
+    transition: background 0.2s;
+  }
+
+  .cost-row:hover { background: rgba(255,255,255,0.03); }
+
+  .cost-left {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .cost-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+
+  .cost-title {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .cost-desc {
+    font-size: 0.87rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .cost-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 110px;
+    text-align: right;
+  }
+
+  .cost-amount.red { color: #e74c3c; }
+  .cost-amount.muted { color: rgba(255,255,255,0.35); font-size: 1.1rem; }
+
+  .cost-total-row {
+    background: rgba(231,76,60,0.12);
+    border-top: 2px solid rgba(231,76,60,0.4);
+    padding: 1.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .cost-total-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .cost-total-sub { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+  .cost-total-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #e74c3c;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .vs-line { flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
+
+  .vs-badge {
+    background: rgba(201,146,42,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* OFFER SECTION */
+  .offer-section {
+    background: linear-gradient(180deg, #0d0d0d 0%, #0d1f3c 100%);
+    padding: 4rem 2rem 6rem;
+  }
+
+  .offer-header { text-align: center; margin-bottom: 3rem; }
+
+  .offer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  .offer-title span { color: var(--gold-light); }
+
+  .offer-sub { color: rgba(255,255,255,0.6); font-size: 1.05rem; }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .offer-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1.8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .offer-item:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
+
+  .offer-item.core { border-color: var(--gold); background: rgba(201,146,42,0.08); }
+  .offer-item.guarantee { border-color: #27ae60; background: rgba(39,174,96,0.07); }
+
+  .offer-badge-pill {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.6);
+    width: fit-content;
+    margin-bottom: 0.3rem;
+  }
+
+  .offer-badge-pill.bonus-pill { background: rgba(52,152,219,0.2); color: #74b9ff; }
+  .offer-badge-pill.guarantee-pill { background: rgba(39,174,96,0.2); color: #55efc4; }
+
+  .offer-item-icon { font-size: 1.8rem; }
+
+  .offer-item-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .offer-item-content p { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  .offer-item-price {
+    margin-top: auto;
+    padding-top: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+
+  .offer-item-price.free { color: #55efc4; font-size: 1.1rem; font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .offer-item-price.guaranteed { color: #55efc4; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* RATIO BLOCK */
+  .ratio-block {
+    background: rgba(201,146,42,0.08);
+    border: 1px solid rgba(201,146,42,0.3);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .ratio-equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .ratio-item { text-align: center; }
+
+  .ratio-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+
+  .ratio-item.highlight .ratio-num {
+    font-size: 2.8rem;
+    color: var(--gold-light);
+  }
+
+  .ratio-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .ratio-symbol {
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.25);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .ratio-copy {
+    color: rgba(255,255,255,0.65);
+    font-size: 1rem;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .ratio-copy strong { color: var(--gold-light); }
+
+  /* FINAL OFFER CARD */
+  .final-offer-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .final-offer-crossed {
+    text-decoration: line-through;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .final-offer-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .final-offer-price span {
+    font-size: 1.2rem;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .final-offer-tag {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1.8rem;
+    font-style: italic;
+  }
+
+  .btn-cta-xl {
+    display: block;
+    background: var(--navy);
+    color: var(--white);
+    padding: 1.2rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    box-shadow: 0 6px 25px rgba(13,31,60,0.25);
+  }
+
+  .btn-cta-xl:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,146,42,0.4);
+  }
+
+  .final-offer-note {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+
+  .final-checklist { list-style: none; }
+
+  .final-checklist li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+    color: var(--text);
+  }
+
+  .final-checklist li:last-child { border-bottom: none; }
+
+  .final-checklist li::before {
+    content: '✓';
+    width: 20px;
+    height: 20px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .offer-grid { grid-template-columns: 1fr; }
+    .final-offer-card { grid-template-columns: 1fr; padding: 2rem; }
+    .cost-row { flex-direction: column; gap: 0.8rem; }
+    .cost-amount { text-align: left; }
+    .cost-total-row { flex-direction: column; gap: 0.5rem; }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--white); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.8rem;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testimonial-author { font-weight: 600; font-size: 0.85rem; color: var(--navy); }
+  .testimonial-location { font-size: 0.8rem; color: var(--muted); }
+
+  .stars { color: var(--gold); margin-bottom: 0.8rem; font-size: 0.9rem; }
+
+  /* WHY US */
+  .why-us { background: var(--green-light); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .why-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.6rem;
+    text-align: center;
+    border: 1px solid rgba(26,122,74,0.15);
+    transition: transform 0.2s;
+  }
+
+  .why-card:hover { transform: translateY(-4px); }
+
+  .why-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+
+  .why-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .why-card p { font-size: 0.85rem; color: var(--muted); }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3360 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(201,146,42,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .cta-final p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .phone-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    display: block;
+    margin-top: 1.5rem;
+    text-decoration: none;
+  }
+
+  .phone-display:hover { color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    background: #080e1a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.82rem;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 1rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .solution-layout { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-inner > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-inner > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-inner > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-inner > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-inner > *:nth-child(5) { animation-delay: 0.7s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Clear<span>Flow</span> Drainage</a>
+  <div class="nav-links">
+    <a href="#pitfalls">The Risks</a>
+    <a href="#solution">Our Survey</a>
+    <a href="#contact">Contact</a>
+    <a href="drainage.html">General Services</a>
+    <a href="#contact" class="nav-cta">Book a Survey</a>
+  </div>
+</nav>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  ⚠️ <strong>Did you know?</strong> 1 in 5 house sales fall through — drainage issues are a leading cause. Don't let it happen to you.
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">For Home Sellers</span>
+    <h1>Is Your Drainage About to <em>Kill Your Sale?</em></h1>
+    <p class="hero-sub">Before your buyer's surveyor uncovers a costly drainage problem mid-sale, get ahead of it. Our pre-sale drainage survey protects your sale, your chain, and your sanity.</p>
+    <div class="hero-cta-group">
+      <a href="#solution" class="btn-primary">See Our £297 Survey →</a>
+      <a href="#pitfalls" class="btn-secondary">What Could Go Wrong?</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">1 in 5</span>
+        <span class="stat-label">Sales Fall Through</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">£297</span>
+        <span class="stat-label">+ VAT for Full Survey</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">CCTV</span>
+        <span class="stat-label">Camera Inspection</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24hr</span>
+        <span class="stat-label">Report Turnaround</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PITFALLS -->
+<section class="pitfalls" id="pitfalls">
+  <div class="section-inner">
+    <p class="section-label">The Hidden Risks</p>
+    <h2 class="section-title">What a Drainage Problem Can Do to Your Sale</h2>
+    <p class="section-intro">When a buyer's surveyor flags drainage concerns, the consequences ripple through your entire chain. Here's what sellers face every day.</p>
+
+    <div class="pitfalls-grid">
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">💔</span>
+        <h3>Your Sale Falls Through Completely</h3>
+        <p>A buyer who discovers collapsed pipes, root ingress or drainage defects mid-sale will often pull out entirely — leaving you back at square one, months down the line, and thousands of pounds lighter in legal and surveying fees.</p>
+      </div>
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">🔗</span>
+        <h3>Your Chain Collapses</h3>
+        <p>It's not just your sale at risk — everyone in the chain is affected. Other buyers and sellers are depending on you. A drainage issue flagged late can bring down three or four transactions at once, destroying months of work for everyone.</p>
+      </div>
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">💷</span>
+        <h3>Forced Price Renegotiation</h3>
+        <p>Buyers armed with a drainage report will use it as leverage. Expect demands to drop the price by thousands — far more than what the actual repair costs — or face the threat of them walking away.</p>
+      </div>
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">⏳</span>
+        <h3>Months of Delays & Uncertainty</h3>
+        <p>Further investigations, additional surveys, quotes from contractors — drainage issues can add months to an already stressful process. Every delay is another round of uncertainty, more sleepless nights, and more costs mounting up.</p>
+      </div>
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">😰</span>
+        <h3>Enormous Stress to All Parties</h3>
+        <p>Selling a home is already one of life's most stressful experiences. A drainage problem discovered late amplifies that stress for you, your buyer, your estate agent, and every solicitor in the chain. Arguments, blame and broken relationships follow.</p>
+      </div>
+
+      <div class="pitfall-card">
+        <span class="pitfall-icon">🏠</span>
+        <h3>Your Onward Purchase Is Jeopardised</h3>
+        <p>If you're also buying, your new purchase is only possible once your sale completes. Drainage issues threatening your sale put everything you've planned for your future home in jeopardy — gazumping risks increase every day you're delayed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STRESS TIMELINE -->
+<section class="stress-section">
+  <div class="section-inner">
+    <p class="section-label">What Sellers Experience</p>
+    <h2 class="section-title">The Timeline When Drainage Goes Wrong</h2>
+    <p class="section-intro">Without a pre-sale survey, this is how events typically unfold — and it's rarely a smooth ride.</p>
+
+    <div class="stress-timeline">
+      <div class="timeline-item">
+        <h4>Month 1–2: Sale Agreed</h4>
+        <p>Everything feels positive. Offer accepted, solicitors instructed, you're already planning your move.</p>
+      </div>
+      <div class="timeline-item danger">
+        <h4>Month 3: Buyer's Survey Flags Drainage Concerns</h4>
+        <p>A CCTV drainage survey is recommended. The buyer is suddenly nervous. The tone of the sale changes overnight.</p>
+      </div>
+      <div class="timeline-item danger">
+        <h4>Month 3–4: Drainage Survey Reveals Problems</h4>
+        <p>Collapsed sections, root ingress, or misaligned joints are found. The buyer's solicitor sends a formal requisition. Everything stalls.</p>
+      </div>
+      <div class="timeline-item danger">
+        <h4>Month 4–5: Renegotiation or Withdrawal</h4>
+        <p>The buyer demands a £5,000 price reduction — or threatens to pull out. Solicitors exchange terse letters. Your estate agent is scrambling. Your chain is under threat.</p>
+      </div>
+      <div class="timeline-item danger">
+        <h4>Month 5–6: Sale Collapses</h4>
+        <p>The buyer walks away. You've spent months of your life, thousands in legal fees, and you're back to square one — relisting a property now tainted by a failed sale.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>The Alternative: Get Our Survey First</h4>
+        <p>Know exactly what you're dealing with before any buyer gets involved. Fix problems early, price with confidence, and sell with nothing to hide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST EXPOSURE SECTION -->
+<section class="cost-section" id="cost">
+  <div class="section-inner">
+    <p class="section-label">The Real Financial Risk</p>
+    <h2 class="section-title">What a Failed Sale Actually Costs You</h2>
+    <p class="section-intro">These aren't worst-case figures. These are typical costs sellers face every day when drainage problems surface mid-sale.</p>
+
+    <div class="cost-table">
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">💷</span>
+          <div>
+            <div class="cost-title">Price negotiation after drain survey</div>
+            <div class="cost-desc">Buyers routinely demand £5,000–£20,000 off on discovery of drainage issues. Average chip: £12,000. You're negotiating from a position of complete weakness.</div>
+          </div>
+        </div>
+        <div class="cost-amount red">£12,000</div>
+      </div>
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">⚖️</span>
+          <div>
+            <div class="cost-title">Solicitor fees — wasted on a collapsed sale</div>
+            <div class="cost-desc">You've already paid your conveyancer £1,500–£2,500. Sale falls through — that money is gone. You'll pay it all again on the next attempt.</div>
+          </div>
+        </div>
+        <div class="cost-amount red">£2,000</div>
+      </div>
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">🏡</span>
+          <div>
+            <div class="cost-title">Estate agent re-listing costs & time</div>
+            <div class="cost-desc">Relisting fees, new photography, fresh marketing. Plus your listing now carries the stigma of a failed sale — buyers notice and offers come in lower.</div>
+          </div>
+        </div>
+        <div class="cost-amount red">£1,500</div>
+      </div>
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">📅</span>
+          <div>
+            <div class="cost-title">Mortgage payments during delay</div>
+            <div class="cost-desc">The average sale takes 22 weeks. A collapsed sale resets the clock — that's another 5–6 months of mortgage on a home you're trying to leave behind.</div>
+          </div>
+        </div>
+        <div class="cost-amount red">£6,000</div>
+      </div>
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">🔑</span>
+          <div>
+            <div class="cost-title">Losing your onward purchase</div>
+            <div class="cost-desc">Your chain collapses. The property you were buying gets sold to someone else. You start again — potentially in a higher market, with fewer options and more competition.</div>
+          </div>
+        </div>
+        <div class="cost-amount red">£15,000+</div>
+      </div>
+
+      <div class="cost-row">
+        <div class="cost-left">
+          <span class="cost-icon">😔</span>
+          <div>
+            <div class="cost-title">Stress, disruption & time lost</div>
+            <div class="cost-desc">Months of your life — viewings, surveys, solicitor calls, packing, planning — gone. The emotional toll of watching a sale collapse is real, lasting and deeply personal.</div>
+          </div>
+        </div>
+        <div class="cost-amount muted">Priceless</div>
+      </div>
+
+      <div class="cost-total-row">
+        <div class="cost-total-label">
+          <div class="cost-total-title">Total financial exposure</div>
+          <div class="cost-total-sub">Conservative estimate — real cases regularly exceed this</div>
+        </div>
+        <div class="cost-total-amount">£36,500+</div>
+      </div>
+
+    </div>
+
+    <!-- THE VS DIVIDER -->
+    <div class="vs-divider">
+      <div class="vs-line"></div>
+      <div class="vs-badge">vs. the alternative</div>
+      <div class="vs-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IRRESISTIBLE OFFER SECTION -->
+<section class="offer-section" id="solution">
+  <div class="section-inner">
+
+    <div class="offer-header">
+      <p class="section-label" style="color:var(--gold-light);">The Offer</p>
+      <h2 class="offer-title">What You Get for <span>£297</span></h2>
+      <p class="offer-sub">Everything you need to protect your sale — before a single buyer sets foot through your door.</p>
+    </div>
+
+    <div class="offer-grid">
+
+      <div class="offer-item core">
+        <div class="offer-badge-pill">Core</div>
+        <div class="offer-item-icon">🎥</div>
+        <div class="offer-item-content">
+          <h3>Full CCTV Drain Survey</h3>
+          <p>Every drain inspected. HD video footage, professional written report, clear pass/fail result — completed before your buyer's surveyor even sets foot on the property.</p>
+        </div>
+        <div class="offer-item-price">£297</div>
+      </div>
+
+      <div class="offer-item bonus">
+        <div class="offer-badge-pill bonus-pill">Bonus 1</div>
+        <div class="offer-item-icon">📄</div>
+        <div class="offer-item-content">
+          <h3>Buyer-Ready Health Certificate</h3>
+          <p>A one-page document confirming your drains are clear. Show it at every viewing, hand it to your solicitor, use it as a genuine sales advantage over every other property on the market.</p>
+        </div>
+        <div class="offer-item-price free">Free</div>
+      </div>
+
+      <div class="offer-item bonus">
+        <div class="offer-badge-pill bonus-pill">Bonus 2</div>
+        <div class="offer-item-icon">🔧</div>
+        <div class="offer-item-content">
+          <h3>Issue Found? We Fix & Re-Survey Free</h3>
+          <p>If we find a problem, we provide a remediation quote — and re-survey after the fix at absolutely no extra charge. You stay in complete control of the narrative before your buyer finds out.</p>
+        </div>
+        <div class="offer-item-price free">Free</div>
+      </div>
+
+      <div class="offer-item guarantee">
+        <div class="offer-badge-pill guarantee-pill">Guarantee</div>
+        <div class="offer-item-icon">🛡️</div>
+        <div class="offer-item-content">
+          <h3>Full Money-Back Guarantee</h3>
+          <p>If a drainage issue causes your sale to fall through after our survey gave a clean bill of health, you get every penny back. No questions asked. No small print. We stand behind our work completely.</p>
+        </div>
+        <div class="offer-item-price guaranteed">Guaranteed</div>
+      </div>
+
+    </div>
+
+    <!-- PROTECTION RATIO CALCULATOR -->
+    <div class="ratio-block">
+      <div class="ratio-equation">
+        <div class="ratio-item">
+          <div class="ratio-num">£36,500+</div>
+          <div class="ratio-label">at risk</div>
+        </div>
+        <div class="ratio-symbol">÷</div>
+        <div class="ratio-item">
+          <div class="ratio-num">£297</div>
+          <div class="ratio-label">survey</div>
+        </div>
+        <div class="ratio-symbol">=</div>
+        <div class="ratio-item highlight">
+          <div class="ratio-num">123×</div>
+          <div class="ratio-label">protection ratio</div>
+        </div>
+      </div>
+      <p class="ratio-copy">For every £1 you spend on the survey, you're protecting <strong>£123 of potential loss</strong>. Skipping the survey isn't saving money — it's gambling £36,500 to avoid a £297 insurance policy.</p>
+    </div>
+
+    <!-- FINAL OFFER CARD -->
+    <div class="final-offer-card">
+      <div class="final-offer-left">
+        <div class="final-offer-crossed">Total value: £500+</div>
+        <div class="final-offer-price">£297 <span>+ VAT</span></div>
+        <div class="final-offer-tag">One survey. Complete peace of mind. Before you go to market.</div>
+        <a href="#contact" class="btn-cta-xl">Secure Your Survey Today →</a>
+        <p class="final-offer-note">Fixed price. No hidden fees. Available 6 days a week.</p>
+      </div>
+      <div class="final-offer-right">
+        <ul class="final-checklist">
+          <li>Full CCTV drain inspection (HD footage)</li>
+          <li>Professional written report — 24hr turnaround</li>
+          <li>Buyer-ready health certificate</li>
+          <li>Free re-survey after any remediation work</li>
+          <li>Money-back guarantee if sale falls through</li>
+          <li>No call-out fee, no hidden charges</li>
+          <li>Fully qualified &amp; insured engineers</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <p class="section-label">What Sellers Say</p>
+    <h2 class="section-title">Real Experiences from Home Sellers</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">We had a sale fall through previously because of drainage issues we didn't know about. This time we got the survey done first. Totally worth every penny — the sale went through without a hitch.</p>
+        <div class="testimonial-author">Sarah & Mark T.</div>
+        <div class="testimonial-location">Sold in Bournemouth</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Our estate agent actually recommended getting this done before listing. The report gave our buyers complete confidence and we exchanged in 8 weeks. Stress-free is an understatement.</p>
+        <div class="testimonial-author">James W.</div>
+        <div class="testimonial-location">Sold in Poole</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">They found a root ingress issue we had no idea about. Because we knew early we got it fixed quickly and cheaply. Our buyer was impressed we were so transparent — no renegotiation needed.</p>
+        <div class="testimonial-author">Linda H.</div>
+        <div class="testimonial-location">Sold in Christchurch</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="section-inner">
+    <p class="section-label">Why Choose Us</p>
+    <h2 class="section-title">Your Sale Deserves the Best Protection</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🎥</div>
+        <h4>HD CCTV Equipment</h4>
+        <p>The latest camera technology for a thorough, detailed inspection every time.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📋</div>
+        <h4>Professional Reports</h4>
+        <p>Reports solicitors and mortgage lenders actually accept without question.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h4>Fast Turnaround</h4>
+        <p>Surveyed and reported within 24–48 hours so your sale stays on track.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h4>Fixed Price Guarantee</h4>
+        <p>£297 + VAT. No surprise additions. No call-out fees. That's it.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏅</div>
+        <h4>Fully Qualified</h4>
+        <p>Certified, insured engineers with years of experience on domestic properties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contact">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-label" style="color:var(--gold-light);">Ready to Protect Your Sale?</p>
+    <h2>Don't Let Drainage Derail Everything You've Worked For</h2>
+    <p>Book your pre-sale drainage survey today. £297 + VAT. Fast, professional, and the peace of mind your sale deserves.</p>
+    <a href="#contact" class="btn-primary" style="font-size:1.1rem; padding:1.2rem 3rem;">Book Your Survey — £297 + VAT</a>
+    <a href="tel:01202000000" class="phone-display">📞 01202 000 000</a>
+    <p style="color:rgba(255,255,255,0.4); margin-top:1rem; font-size:0.85rem;">Available Monday–Saturday. Most appointments within 3 working days.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 ClearFlow Drainage. All rights reserved. | <a href="drainage.html">General Drainage Services</a> | Serving Bournemouth, Poole, Christchurch & surrounding areas.</p>
+  <p style="margin-top:0.5rem;">Fully insured. All prices subject to VAT. Terms & conditions apply.</p>
+</footer>
+
+</body>
+</html>
